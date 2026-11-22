@@ -1,0 +1,9 @@
+export const fmtDate = (d) => (d ? new Date(String(d).slice(0, 10) + 'T00:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' }) : '-');
+export const fmtShort = (d) => (d ? new Date(String(d).slice(0, 10) + 'T00:00:00Z').toLocaleDateString('en-GB', { day: '2-digit', month: 'short', timeZone: 'UTC' }) : '-');
+export const hm = (t) => String(t || '').slice(0, 5);
+export const num = (n, d = 1) => (n === null || n === undefined || Number.isNaN(Number(n)) ? '-' : Number(n).toLocaleString(undefined, { maximumFractionDigits: d }));
+export const fmtDuration = (ms) => (ms < 1000 ? `${Math.round(ms)} ms` : `${(ms / 1000).toFixed(1)} s`);
+export const pct = (a, b) => (a ? `${(((a - b) / a) * 100).toFixed(1)}%` : '-');
+export const ROOM_TYPES = [['classroom', 'Classroom'], ['lecture_hall', 'Lecture hall'], ['laboratory', 'Laboratory'], ['auditorium', 'Auditorium']];
+export const CONFLICT_COLORS = { student_clash: '#e11d48', faculty_clash: '#f97316', room_double_booking: '#d97706', room_capacity: '#7c3aed', faculty_unavailable: '#0891b2', room_unavailable: '#0d9488', invalid_duration: '#db2777', slot_unavailable: '#64748b', faculty_not_eligible: '#2563eb', faculty_overload: '#ca8a04', insufficient_invigilators: '#9333ea', unscheduled_exam: '#dc2626' };
+export const CONFLICT_LABELS = { student_clash: 'Student clash', faculty_clash: 'Faculty clash', room_double_booking: 'Room double-booking', room_capacity: 'Room capacity', faculty_unavailable: 'Faculty unavailable', room_unavailable: 'Room unavailable', invalid_duration: 'Invalid duration', slot_unavailable: 'Slot unavailable', faculty_not_eligible: 'Faculty not eligible', faculty_overload: 'Faculty overload', insufficient_invigilators: 'Too few invigilators', unscheduled_exam: 'Not scheduled' };

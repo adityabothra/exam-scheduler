@@ -1,0 +1,27 @@
+{
+  "name": "exam-scheduler-backend",
+  "version": "1.0.0",
+  "description": "AI-based University Examination Scheduling and Optimization System - API (Simulated Annealing)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "db:init": "node db/migrate.js",
+    "db:seed": "node db/seed.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.5",
+    "exam-scheduler": "file:..",
+    "exceljs": "^4.4.0",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.0",
+    "pdfkit": "^0.15.0"
+  }
+}
